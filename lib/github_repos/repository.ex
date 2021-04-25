@@ -3,7 +3,7 @@ defmodule GithubRepos.Repository do
 
   @enforce_keys @keys
 
-  @defstruct @keys
+  defstruct @keys
 
   @derive {Jason.Encoder, only: @keys}
 
