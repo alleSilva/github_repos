@@ -18,6 +18,6 @@ defmodule GithubRepos.Repository do
   end
 
   def build_repositories([_h | _t] = repositories) do
-    Enum.map(repositories, &build_repository/1)
+    Enum.map(repositories, & build_repository/1)
   end
 end

@@ -17,7 +17,7 @@ defmodule GithubRepos.Repositories.Client do
     {:ok, Repository.build_repositories(body)}
   end
 
-  defp handle_get({:error, %Env{status: 404, body: _body}}) do
+  defp handle_get({:ok, %Env{status: 404, body: _body}}) do
     {:error, Error.build(:bad_request, "User not found!")}
   end
 
