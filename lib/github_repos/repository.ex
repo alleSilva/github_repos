@@ -7,7 +7,7 @@ defmodule GithubRepos.Repository do
 
   @derive {Jason.Encoder, only: @keys}
 
-  def build(repository) do
+  def build_repository(repository) do
     %__MODULE__{
       id: repository["id"],
       description: repository["description"],
@@ -17,7 +17,7 @@ defmodule GithubRepos.Repository do
     }
   end
 
-  def build_list([_h | _t] = repositories) do
-    Enum.map(repositories, & build/1)
+  def build_repositories([_h | _t] = repositories) do
+    Enum.map(repositories, &build_repository/1)
   end
 end
