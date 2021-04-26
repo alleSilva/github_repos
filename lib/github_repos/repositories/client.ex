@@ -1,4 +1,4 @@
-defmodule GithubRepos.Client do
+defmodule GithubRepos.Repositories.Client do
   use Tesla
   alias GithubRepos.Error
   alias GithubRepos.Repository

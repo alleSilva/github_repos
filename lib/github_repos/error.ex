@@ -1,11 +1,11 @@
 defmodule GithubRepos.Error do
-  @keys [:result, :status]
+  @keys [:status, :result]
 
   @enforce_keys @keys
 
   defstruct @keys
 
-  def build(result, status) do
+  def build(status, result) do
     %__MODULE__{
       result: result,
       status: status

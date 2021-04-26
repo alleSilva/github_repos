@@ -3,9 +3,9 @@ defmodule GithubRepos.Repository do
 
   @enforce_keys @keys
 
-  defstruct @keys
-
   @derive {Jason.Encoder, only: @keys}
+
+  defstruct @keys
 
   def build_repository(repository) do
     %__MODULE__{
