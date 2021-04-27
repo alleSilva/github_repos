@@ -12,6 +12,14 @@ config :tesla, adapter: Tesla.Adapter.Hackney
 config :github_repos,
   ecto_repos: [GithubRepos.Repo]
 
+config :github_repos, GithubRepos.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
+config :github_repos, GithubRepos.Auth.Guardian,
+  issuer: "github_repos",
+  secret_key: "ZM/wJMEdaKGsUCoOiEbZP8/tRt32wDIqBMial2FDEICMO/LjILv7Xzm7cwjHFbHa"
+
 # Configures the endpoint
 config :github_repos, GithubReposWeb.Endpoint,
   url: [host: "localhost"],
