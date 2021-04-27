@@ -1,6 +1,9 @@
 defmodule GithubReposWeb.RepositoriesController do
   use GithubReposWeb, :controller
   alias GithubRepos.Repository
+  alias GithubReposWeb.FallbackController
+
+  action_fallback FallbackController
 
   def show(conn, %{"user" => user_name}) do
     with {:ok, [%Repository{} | _tail] = repositories} <- GithubRepos.get_repos(user_name) do
