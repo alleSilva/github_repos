@@ -10,7 +10,7 @@ defmodule GithubRepos.Users.Get do
   end
 
   def get(uuid) do
-    case Repo.get(uuid) do
+    case Repo.get(User, uuid) do
       nil -> {:error, Error.build(:not_found, "User not found")}
       user -> {:ok, user}
     end
