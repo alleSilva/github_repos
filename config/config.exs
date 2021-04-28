@@ -16,7 +16,7 @@ config :github_repos, GithubRepos.Repo,
   migration_primary_key: [type: :binary_id],
   migration_foreign_key: [type: :binary_id]
 
-config :github_repos, GithubRepos.Auth.Guardian,
+config :github_repos, GithubReposWeb.Auth.Guardian,
   issuer: "github_repos",
   secret_key: "ZM/wJMEdaKGsUCoOiEbZP8/tRt32wDIqBMial2FDEICMO/LjILv7Xzm7cwjHFbHa"
 

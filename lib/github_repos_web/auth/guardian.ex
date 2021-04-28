@@ -1,4 +1,4 @@
-defmodule GithubRepos.Auth.Guardian do
+defmodule GithubReposWeb.Auth.Guardian do
   use Guardian, otp_app: :github_repos
 
   alias GithubRepos.User
