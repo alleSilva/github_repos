@@ -14,7 +14,7 @@ defmodule GithubReposWeb.UsersView do
     }
   end
 
-  def render("sign_in.json", %{token: token}) do
+  def render("login.json", %{token: token}) do
     %{token: token}
   end
 end
