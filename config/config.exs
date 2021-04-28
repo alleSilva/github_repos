@@ -20,6 +20,10 @@ config :github_repos, GithubReposWeb.Auth.Guardian,
   issuer: "github_repos",
   secret_key: "ZM/wJMEdaKGsUCoOiEbZP8/tRt32wDIqBMial2FDEICMO/LjILv7Xzm7cwjHFbHa"
 
+config :github_repos, GithubReposWeb.Auth.Pipeline,
+  module: GithubReposWeb.Auth.Guardian,
+  error_handler: GithubReposWeb.Auth.ErrorHandler
+
 # Configures the endpoint
 config :github_repos, GithubReposWeb.Endpoint,
   url: [host: "localhost"],
